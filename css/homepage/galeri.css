@@ -1,0 +1,32 @@
+.galeri-preview{
+    margin-bottom: 7em;
+}
+
+.galeri-container{
+    place-items: center;
+    justify-content: center;
+    padding: 3em;
+    display: flex;
+    column-gap: 15em;
+    row-gap: 5em;
+    flex-wrap: wrap;
+    margin-bottom: 5em;
+}
+
+.foto{
+    border-radius: 10px;
+    padding: 1em;
+    background-color: var(--primary-blue);
+    width: fit-content;
+    font-family: var(--monsterrat);
+}
+
+.galeri-preview button{
+    background-color: var(--yellow);
+    border:none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.75em;
+    font-weight: bolder;
+    padding: 0.5em;
+}

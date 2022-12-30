@@ -1,0 +1,80 @@
+.contact{
+    margin-bottom: 7em;
+}
+
+.message-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 3em;
+}
+
+.message-container input{
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    border: none;
+    color: var(--gray-blue);
+    padding: 1.5em;
+    width: 50em;
+    text-align: left;
+}
+
+.message-container input::placeholder {
+    color: var(--gray-blue);
+    opacity: 1;
+}
+  
+.message-container input:-ms-input-placeholder {
+    color: var(--gray-blue);
+}
+  
+.message-container input::-ms-input-placeholder {
+    color: var(--gray-blue);
+}
+
+.message-container textarea{
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 1.5em;
+    width: 50em;
+    text-align: left;
+}
+
+.message-container textarea::placeholder {
+    color: white;
+    opacity: 1;
+}
+  
+.message-container textarea:-ms-input-placeholder {
+    color: white;
+}
+  
+.message-container textarea::-ms-input-placeholder {
+    color: white;
+}
+
+.message-container button{
+    border: 3px solid var(--secondary-blue);
+    border-radius: 5px;
+    background-color: var(--white);
+    padding:1em;
+    font-weight: 800;
+}
+
+.message-container button:hover{
+    background-color: var(--secondary-blue);
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .message-container input{
+        max-width: 25em;
+    }
+    .message-container textarea{
+        max-width: 25em;
+    }
+}

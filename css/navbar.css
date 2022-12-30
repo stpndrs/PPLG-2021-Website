@@ -1,0 +1,157 @@
+.navbar{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 7em;
+    padding-left: 7em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+
+    background-color: var(--yellow);
+
+    z-index: 2;
+
+    border-bottom: 5px solid white;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 1.75em;
+    padding-inline: 0.45em;
+    color: white;
+    font-weight: bolder;
+}
+
+.navbar a:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: var(--yellow);
+}
+
+.navbar #triangle{
+    fill: white;
+}
+
+.navbar a:hover #triangle{
+    fill: var(--yellow);
+}
+
+.navbar select{
+    text-decoration: none;
+    font-size: 1.75em;
+    padding-inline: 0.45em;
+    color: white;
+    font-weight: bolder;
+    background: none;
+    border: none;
+}
+
+.navbar button{
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.75em;
+    font-weight: bolder;
+    padding: 0.25em;
+    text-decoration: underline;
+}
+
+.navbar button:hover{
+    background-color: white;
+    color: var(--yellow);
+}
+
+.navbar button:active{
+    color: var(--yellow);
+}
+
+#PPLG{
+    font-weight: 1000;
+    font-size: 3.5em;
+}
+
+.more{
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.list{
+    display: none;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.25em;
+    color: white;
+    font-weight: bolder;
+}
+
+.list a{
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    font-weight: bolder;
+}
+
+.tagihan-list{
+    justify-content: space-evenly;
+}
+
+#btn{
+    padding-bottom: 0;
+}
+
+#login{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+      /* Change the flex direction to column on small screens */
+      flex-direction: column;
+      padding: 0;
+    }
+    .navbar a,
+    .navbar select,
+    .navbar button {
+      /* Stack the navbar items vertically on small screens */
+      display: block;
+      margin: 0;
+    }
+    .navbar a {
+      /* Add some padding to the navbar links */
+      padding: 0.5em 1em;
+    }
+    .navbar button {
+      /* Change the appearance of the button element on small screens */
+      background-color: transparent;
+      color: white;
+      font-size: 1.75em;
+      font-weight: bolder;
+      padding: 0;
+      text-decoration: underline;
+      margin-bottom: 1em;
+    }
+    .navbar button:hover {
+      /* Change the hover style of the button element on small screens */
+      background-color: white;
+      color: var(--yellow);
+    }
+    .more {
+      /* Show the "more" dropdown menu on small screens */
+      display: none;
+    }
+    .list {
+      /* Show the dropdown menu items on small screens */
+      display: none;
+      flex-direction: column;
+    }
+    #btn{
+        padding: 0.5em;
+        padding-bottom: 0.25em;
+    }
+  }
+  
