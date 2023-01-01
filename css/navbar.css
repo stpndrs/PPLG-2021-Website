@@ -1,0 +1,226 @@
+.navbar{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 7em;
+    padding-left: 7em;
+    padding-bottom: 3em;
+    padding-top: 0.25em;
+
+    background-color: var(--yellow);
+
+    z-index: 2;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 1.75em;
+    padding-inline: 0.45em;
+    color: white;
+    font-weight: bolder;
+}
+
+.navbar a:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: var(--yellow);
+}
+
+.navbar select{
+    text-decoration: none;
+    font-size: 1.75em;
+    padding-inline: 0.45em;
+    color: var(--yellow);
+    font-weight: bolder;
+    background: none;
+    border: none;
+    margin-inline-end: 1em;
+}
+
+.navbar:hover select{
+    background-color: white;
+    border-radius: 5px;
+}
+
+.navbar option{
+    font-size: 0.75em;
+    font-weight: bolder;
+}
+
+.navbar button{
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.75em;
+    font-weight: bolder;
+    padding: 0.25em;
+    text-decoration: underline;
+}
+
+.navbar button:hover{
+    background-color: white;
+    color: var(--yellow);
+}
+
+.navbar button:active{
+    color: var(--yellow);
+}
+
+#PPLG{
+    font-weight: 1000;
+    font-size: 3.5em;
+    margin-right: 1em;
+}
+
+.more{
+    display: flex;
+}
+
+.list{
+    display: none;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1.25em;
+    color: white;
+    font-weight: bolder;
+}
+
+.list a{
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 1em;
+    color: white;
+    font-weight: bolder;
+}
+
+.tagihan-list{
+    justify-content: space-evenly;
+}
+
+#btn{
+    padding-bottom: 0;
+    display: none;
+}
+
+#login{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    
+    #jadwal-dropdown{
+        display: none;
+    }
+
+    .navbar a,
+    .navbar select,
+    .navbar button {
+      /* Stack the navbar items vertically on small screens */
+      display: block;
+      margin: 0;
+    }
+    .navbar a {
+      /* Add some padding to the navbar links */
+      padding: 0.5em 1em;
+    }
+    .navbar button {
+      /* Change the appearance of the button element on small screens */
+      background-color: transparent;
+      color: white;
+      font-size: 1.75em;
+      font-weight: bolder;
+      padding: 0;
+      text-decoration: underline;
+      margin-bottom: 1em;
+    }
+    .navbar button:hover {
+      /* Change the hover style of the button element on small screens */
+      background-color: white;
+      color: var(--yellow);
+    }
+    .more{
+        display: none;
+    }
+    #btn{
+        top: 0;
+        position: absolute;
+        margin-top: 1em;
+        margin-right: 0.5em;
+        right: 0;
+        display: inherit;
+    }
+    #btn:hover{
+        background: none;
+    }
+    #PPLG{
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+    .container{
+        margin-left: 0.5em;
+    }
+
+    .more{
+        display: flex;
+        flex-direction: row;
+        font-size: 0.5em;
+        width: 100vw;
+        margin-bottom: 0.5em;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+    }
+    .jadwal-list{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-left: 6em;
+        margin-top: 3em;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 601px){
+    .container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .more{
+        margin-top: 2em;
+        align-items: center;
+        max-height: fit-content;
+    }
+    .navbar{
+        padding-bottom: 0;
+        background: none;
+    }
+
+    .navbar a{
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin-inline-end: 1em;
+        color: var(--yellow);
+        border-radius: 5px;
+    }
+
+    .jadwal-dropdown{
+        display: inherit;
+    }
+
+    #PPLG{
+        margin-right: 4em;
+        background:none;
+        color: white;
+    }
+
+    #jadwal{
+        display: none;
+    }
+}

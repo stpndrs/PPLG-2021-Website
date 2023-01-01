@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPLG 2021 Family</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/login/login.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+        <a href="index.html" id="PPLG" title="index">XI PPLG</a>
+        <div class="more">
+            <a href="index.html" id="active" title="index">Home</a>
+            <select id="jadwal-dropdown">
+                <option value="" selected disabled hidden>Jadwal</option>
+                <option value="mapel.html">Jadwal Mapel</option>
+                <option value="ujian.html">Jadwal Ujian</option>
+                <option value="piket.html">Jadwal Piket</option>
+            </select>
+            <a href="#" id="jadwal">Jadwal</a>
+            <ul class="list jadwal-list">
+                <li><a href="mapel.html">Jadwal Mapel</a></li>
+                <li><a href="ujian.html">Jadwal Ujian</a></li>
+                <li><a href="piket.html">Jadwal piket</a></li>
+            </ul>
+            <a href="#">Berita</a>
+            <a href="#">Galeri</a>
+            <a href="tagihan.html" id="tagihan">Tagihan</a>
+            <a href="login.html" id="login">User Login</a>
+        </div>
+    </div>
+        <button id="btn"><img src="img/hamburger.svg"></button>
+    </nav>
+    <div class="welcome-container">
+        <img src="img/Gmbr_1.svg" id="coders">
+        <div class="diamond">
+            <img src="img/Vector 3.svg" id="diamond">
+            <div class="text">
+                <h1>LOGIN</h1>
+                <p>Silahkan login menggunakan NISN.</p>
+                <div class="login">
+                    <p>NISN</p>
+                    <input type="text" placeholder="0123456789">
+                    <p>Password</p>
+                    <input type="password" placeholder="*********">
+                </div>
+                <button>Login</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Copyright © <span>PPLG_2021</span> | ALL RIGHTS RESERVED
+    </footer>
+    <script src="js/navbar.js"></script>
+</body>
+</html>
