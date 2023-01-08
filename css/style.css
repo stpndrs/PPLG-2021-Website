@@ -1,0 +1,489 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-blue:#104EA3;
+    --secondary-blue:#06488C;
+    --tertiary-blue:#174C98;
+    --gray-blue:#5783be;
+    --red:#EC3565;
+    --cyan:#50D2D2;
+    --light-cyan:#CAEFFF;
+    --yellow:#F6AB36;
+    --white:#F7F4EA;
+    --shadow: 0 .5rem .7rem rgba(0,0,0,.15);
+}
+
+ul, dl, ol {
+    list-style-type: none;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0!important;
+}
+
+p {
+    margin: 0!important;
+}
+
+a {
+    text-decoration: none!important;
+    color: var(--white);
+}
+
+.blue {
+    color: var(--primary-blue);
+}
+
+/* Navbar */
+
+.navbar {
+    position: fixed!important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    width: 100%;
+    background-color:  var(--primary-blue);
+    padding: 15px;
+    /* background-color: transparent !important; */
+    /* box-shadow: none !important; */
+}
+
+.navbar .logo h1{
+    color: var(--white);
+    font-weight: 700;
+}
+
+.navbar .navigation ul{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar .navigation ul li {
+    margin: 5px 10px;
+}
+
+.navbar .navigation ul li a:not(.login, .dropdown-content ul li a):hover {
+    background-color: var(--white);
+    color: var(--yellow);
+
+}
+
+.navbar .navigation ul li a {
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: var(--white);
+    font-size: 12pt;
+}
+
+/* .navbar .navigation .tagihan{
+    color: var(--primary-blue);
+} */
+
+.navbar .navigation .login {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+.navbar .navigation .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 20px;
+    background-color: var(--white);
+    z-index: 1;
+    width: 12rem;
+    border-radius: 5px;
+}
+
+.navbar .navigation .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .navigation .dropdown-content ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.navbar .navigation .dropdown-content ul li a {
+    color: var(--yellow);
+    font-size: 12pt;
+}
+/* Navbar */
+
+/* Berita-HomePage */
+.berita-section-homepage {
+    margin-top: 15px;
+}
+
+.berita-wrapper .berita-container {
+    width: 100%;
+}
+
+.berita-wrapper .berita-container .owl-carousel .owl-item {
+    max-width: 354px;
+    margin: 20px 0;
+    margin-left: 10px;
+}
+
+.berita-wrapper .berita-container .card-berita{
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+/* Card Content */
+.berita-wrapper .berita-container .card-berita .card-content {
+    position: absolute;
+    z-index: 5;
+    padding: 0.7em;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.berita-wrapper .berita-container .card-berita:hover .card-content {
+    opacity: 1;
+    transform: translate(0%, -10%);
+    transition: all 0.5s ease;
+}
+
+.berita-wrapper .berita-container .card-berita .card-content .title {
+    font-size: 1.2em;
+    color: var(--yellow);
+}
+/* Card Content */
+
+/* Card Image */
+.berita-wrapper .berita-container .card-berita .card-image {
+    max-width: 23rem;
+    transition: all 0.4s linear;
+}
+
+.berita-wrapper .berita-container .card-berita:hover .card-image {
+    filter: blur(1.4px);
+    overflow: hidden;
+    transition: all 0.4s linear;
+}
+
+.berita-wrapper .berita-container .card-berita .card-image img {
+    width: 100%;
+    object-fit: contai;
+}
+/* Card Image */
+
+/* Berita-HomePage */
+
+/* Galeri-HomePage */
+.galeri-section-homepage{
+    margin-bottom: 7em;
+}
+
+.galeri-wrapper .galeri-container{
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    padding: 1em;
+    gap: 1.3em;
+}
+
+.galeri-wrapper .galeri-container .card-galeri {
+    max-width: 21rem;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+}
+
+.galeri-wrapper .galeri-container .card-galeri .title {
+    font-size: 1.2em;
+    color: var(--yellow);
+    padding: 0.6em;
+}
+
+.galeri-wrapper .galeri-container .card-galeri img {
+    padding: 0.5em;
+    width: 100%;
+}
+/* Galeri-HomePage */
+
+/* Project-HomePage */
+.project-section-homepage{
+    margin-top: 7em;
+    margin-bottom: 7em;
+}
+
+.project-wrapper .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    place-content: center;
+    padding: 1em;
+    gap: 1.3em;
+}
+
+.project-wrapper .project-container .card-project {
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    position: relative;
+}
+/* Card-content */
+.project-wrapper .project-container .card-project .card-content {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    z-index: 5;
+    padding: 0.7em;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow:  0 .3rem .5rem rgba(0,0,0,.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    height: 20%;
+    transition: all 0.5s ease;
+}
+
+.project-wrapper .project-container .card-project:hover .card-content {
+    transition: height 0.5s ease;
+    border-radius: 0;
+    height: 100%;
+}
+/* Card-content */
+
+/* Description */
+.card-project .description {
+    position: absolute;
+    transform: translate(0%, 10%);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.card-project:hover .description {
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+/* Description */
+
+/* Card-project */
+.project-wrapper .project-container .card-project .title {
+    font-size: 1.2em;
+    color: var(--yellow);
+}   
+
+.project-wrapper .project-container .card-project .image-card {
+    max-width: 23rem;
+}
+
+.project-wrapper .project-container .card-project .image-card img {
+    width: 100%;
+    object-fit: contain;
+}
+/* Card-project */
+
+/* Bahasa Container */
+.project-wrapper .project-container .card-project .bahasa-container {
+    margin-top: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.project-wrapper .project-container .card-project .bahasa-container img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+/* Bahasa Container */
+
+/* Project-HomePage */
+
+
+/* Jadwal-Section */
+.jadwal-section {
+    margin: 5em 0;
+}
+
+.jadwal-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+}
+
+.jadwal-wrapper .header-jadwal {
+    margin-top: 10px;
+}
+
+.jadwal-wrapper .header-jadwal .sub-heading {
+    text-align: center;
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.jadwal-wrapper .dropdown-kelas{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.jadwal-wrapper .dropdown-kelas .container-option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jadwal-wrapper .dropdown-kelas .container-option .choose {
+    font-size: 1.5em;
+}
+
+
+
+.dropdown-kelas .container-option .option-dropdown {
+    width: 300px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 1.2em;
+    color: #474747;
+    height: 100%;
+    text-align: left
+}
+
+.dropdown-kelas .container-option .option-dropdown span {
+    font-size: 15pt;
+    padding: 5px;
+}
+
+.dropdown-kelas .container-option .option-dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-kelas .container-option .option-dropdown .select > i {
+    font-size: 13px;
+    color: var(--yellow);
+    transition: all .3s ease-in-out;
+}
+
+.dropdown-kelas .container-option .option-dropdown:hover {
+    box-shadow: var(--shadow);
+}
+
+.dropdown-kelas .container-option .option-dropdown:active {
+    background-color: #f8f8f8;
+}
+
+.dropdown-kelas .container-option .option-dropdown:hover,
+.dropdown-kelas .container-option .option-dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8
+}
+
+.dropdown-kelas .container-option .option-dropdown.active .select > i {
+    transform: rotate(-90deg);
+}
+
+.dropdown-kelas .container-option .option-dropdown:focus {
+    border: unset;
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    /* box-shadow: 0 1px 2px rgb(204, 204, 204); */
+    border-radius: 0 1px 2px 2px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+
+.jadwal-wrapper .mapel-container {
+    display: flex;
+    gap: 1em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: var(--yellow);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 1.25em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .sub-heading {
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .mapel-list {
+    display: flex;
+    gap: .3em;
+    align-items: center;
+}
+
+.mapel-container .card-wrapper .card-mapel .kegiatan {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapel-container .card-wrapper .card-mapel .mapel-list .mapel {
+    font-size: 1.2em;
+}
+
+.mapel-container .card-wrapper .card-mapel .mapel-list .guru {
+    margin-top: 2px!important;
+    font-size: 1em;
+    color: var(--primary-blue);
+}
+
+/* Jadwal-Section */

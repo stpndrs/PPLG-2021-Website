@@ -1,18 +1,35 @@
-body{
-    background-color: var(--white);
-}
-
-.welcome-container{
-    padding-top: 15em;
+header {
+    height: 100%;
+    width: 100%;
     background-color: var(--primary-blue);
-    padding-bottom: 9em;
 }
 
-.diamond{
-    position: absolute;
-    right: 0;
-    top: 0;
+.jumbotron{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
 }
+
+.jumbotron #coders {
+    width: 95%;
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+}
+
+
+/* .jumbotron .vector-wrapper {
+    position: absolute;
+
+}
+
+.jumbotron .vector-wrapper svg {
+    position: relative;
+    top: 0;
+    width: 100em;
+    left: 15rem;
+} */
+
 
 .text{
     display: flex;

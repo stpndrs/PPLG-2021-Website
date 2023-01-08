@@ -1,68 +1,92 @@
-.family{
-    padding-top: 12em;
-    padding-bottom: 7em;
-    display: flex;
-    flex-direction: column;
+.family-section {
+  margin-top: 10rem;
 }
 
-.header{
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-bottom: 1em;
-    text-align: center;
+.family {
+  padding-top: 12em;
+  padding-bottom: 7em;
+  display: flex;
+  flex-direction: column;
 }
 
-.header h1{
-    font-size: 3em;
-    color: var(--yellow);
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
-.header #family{
-    font-size: 0.75em;
+.header h1 {
+  font-weight: 700;
+  font-size: 2.2em;
+  color: var(--yellow);
 }
 
-.walkel-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3em;
-    margin-bottom: 5em;
-    flex-wrap: wrap;
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-.walkel-container p{
-    font-weight: bolder;
-    color: var(--yellow);
-    font-size: 1.5em;
-    text-align: center;
+.header .sub-heading {
+  font-size: 2em;
 }
 
-.informasi-walkel{
-    background-color: var(--primary-blue);
-    width: fit-content;
-    padding: 1em;
-    border-radius: 26px;
-    margin-bottom: 1em;
+.walkel-wrapper {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  margin-bottom: 5em;
+  flex-wrap: wrap;
 }
 
-.informasi-walkel p{
-    color: white;
-    text-align: center;
+.walkel-wrapper p {
+  font-weight: bolder;
+  color: var(--yellow);
+  font-size: 1.5em;
+  text-align: center;
 }
 
-.informasi-murid{
-    background-color: var(--primary-blue);
-    width: fit-content;
-    padding: 1em;
-    border-radius: 26px;
+.informasi-walkel {
+  background: rgba(46, 75, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 12rem;
+  padding: 0.5em;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
 }
 
-.informasi-murid p{
-    color: white;
-    font-weight: bolder;
-    font-size: 1.5em;
-    text-align: center;
+.card-item img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: contain;
+}
+
+.informasi-walkel p {
+  color: white;
+  text-align: center;
+}
+
+.informasi-murid {
+  width: fit-content;
+  background-color: var(--primary-blue);
+  box-shadow: var(--shadow);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.informasi-murid p {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-align: center;
 }

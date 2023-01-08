@@ -1,45 +1,87 @@
-.project-preview{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 7em;
+.project-section-homepage{
+  margin-top: 7em;
+  margin-bottom: 7em;
 }
 
-.project-container{
-    justify-content: center;
-    padding: 3em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7em;
+.project-wrapper .project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-content: center;
+  padding: 1em;
+  gap: 1.3em;
 }
 
-.project{
-    border-radius: 15px;
-    padding: 1.5em;
-    background-color: var(--primary-blue);
-    width: fit-content;
-    font-family: var(--monsterrat);
+.project-wrapper .project-container .card-project {
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  position: relative;
+}
+/* Card-content */
+.project-wrapper .project-container .card-project .card-content {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  z-index: 5;
+  padding: 0.7em;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+    box-shadow:  0 .3rem .5rem rgba(0,0,0,.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  height: 20%;
+  transition: all 0.5s ease;
 }
 
-.project h2{
-    color: white;
-    margin-bottom: 0.5em;
+.project-wrapper .project-container .card-project:hover .card-content {
+  transition: height 0.5s ease;
+  border-radius: 0;
+  height: 100%;
+}
+/* Card-content */
+
+/* Description */
+.card-project .description {
+  position: absolute;
+  transform: translate(0%, 10%);
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
-.bahasa-container{
-    margin-top: 0.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 2em;
+.card-project:hover .description {
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+/* Description */
+
+/* Card-project */
+.project-wrapper .project-container .card-project .title {
+  font-size: 1.2em;
+  color: var(--yellow);
 }
 
-.bahasa-container p{
-    background-color: var(--yellow);
-    color: white;
-    padding: 0.75em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border-radius: 7px;
-    font-weight: 600;
+.project-wrapper .project-container .card-project .image-card {
+  max-width: 23rem;
 }
+
+.project-wrapper .project-container .card-project .image-card img {
+  width: 100%;
+  object-fit: contain;
+}
+/* Card-project */
+
+/* Bahasa Container */
+.project-wrapper .project-container .card-project .bahasa-container {
+  margin-top: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.project-wrapper .project-container .card-project .bahasa-container img {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+/* Bahasa Container */

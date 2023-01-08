@@ -1,85 +1,181 @@
-body{
-    background-color: var(--primary-blue);
+.jadwal-section {
+    margin: 5em 0;
 }
 
-.jadwal-container{
-    margin-top: 15em;
+.jadwal-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.header-jadwal h1{
-    color: white;
-    font-size: 5em;
-}
-
-.dropdown-kelas{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    right: 20%;
-    margin-bottom: 4em;
-}
-
-.dropdown-kelas h1{
-    color: var(--yellow);
-    margin-bottom: 0.25em;
-    text-align: left;
-}
-
-.dropdown-kelas select{
-    font-weight: bolder;
-    padding: 0.5em;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 10px;
-    color: gray;
-    -webkit-appearance: none;
-}
-
-.dropdown-kelas option{
-    font-size: 1em;
-    -webkit-appearance: none;
-}
-
-.jadwal-mapel{
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 3em;
 }
 
-.hari{
-    box-sizing: border-box;
+.jadwal-wrapper .header-jadwal {
+    margin-top: 10px;
+}
 
-    background-color: var(--yellow);
-    border-radius: 10px;
-    padding: 2em;
-    font-size: 1.5em;
+.jadwal-wrapper .header-jadwal .sub-heading {
+    text-align: center;
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2em;
+}
 
+.jadwal-wrapper .dropdown-kelas{
     display: flex;
     flex-direction: column;
-    font-weight: bolder;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.hari h1{
-    font-size: 3em;
-    margin-bottom: 0.15em;
+.jadwal-wrapper .dropdown-kelas .container-option {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.waktu{
-    font-size: 1.25em;
+.jadwal-wrapper .dropdown-kelas .container-option .choose {
+    font-size: 1.5em;
 }
 
-.guru{
+.dropdown-kelas .container-option .option-dropdown {
+    width: 300px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 1.2em;
+    color: #474747;
+    height: 100%;
+    text-align: left
+}
+
+.dropdown-kelas .container-option .option-dropdown span {
+    font-size: 15pt;
+    padding: 5px;
+}
+
+.dropdown-kelas .container-option .option-dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-kelas .container-option .option-dropdown .select > i {
+    font-size: 13px;
+    color: var(--yellow);
+    transition: all .3s ease-in-out;
+}
+
+.dropdown-kelas .container-option .option-dropdown:hover {
+    box-shadow: var(--shadow);
+}
+
+.dropdown-kelas .container-option .option-dropdown:active {
+    background-color: #f8f8f8;
+}
+
+.dropdown-kelas .container-option .option-dropdown:hover,
+.dropdown-kelas .container-option .option-dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8
+}
+
+.dropdown-kelas .container-option .option-dropdown.active .select > i {
+    transform: rotate(-90deg);
+}
+
+.dropdown-kelas .container-option .option-dropdown:focus {
+    border: unset;
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    /* box-shadow: 0 1px 2px rgb(204, 204, 204); */
+    border-radius: 0 1px 2px 2px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+
+.dropdown-kelas .container-option .option-dropdown .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+
+.jadwal-wrapper .mapel-container {
+    display: flex;
+    gap: 1em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: var(--yellow);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 1.25em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .sub-heading {
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .mapel-list {
+    display: flex;
+    gap: .3em;
+    align-items: center;
+}
+
+.mapel-container .card-wrapper .card-mapel .kegiatan {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapel-container .card-wrapper .card-mapel .mapel-list .mapel {
+    font-size: 1.2em;
+}
+
+.mapel-container .card-wrapper .card-mapel .mapel-list .guru {
+    margin-top: 2px!important;
+    font-size: 1em;
     color: var(--primary-blue);
-    font-size: 0.8em;
 }
 
-@media screen and (max-width: 600px) {
+
+
+
+/* @media screen and (max-width: 600px) {
     .dropdown-kelas{
         margin-top: 5em;
         right: 0;
@@ -87,4 +183,4 @@ body{
     .dropdown-kelas h1{
         text-align: center;
     }
-}
+} */
