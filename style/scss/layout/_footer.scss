@@ -1,0 +1,13 @@
+@use '../utilities/variable' as var;
+
+footer {
+    background-color: var.$primary-blue;
+    color: var.$white;
+    margin-top: auto;
+    padding: 1.5em;
+    
+    span {
+        text-decoration: underline;
+        font-weight: 800px;
+    }
+}

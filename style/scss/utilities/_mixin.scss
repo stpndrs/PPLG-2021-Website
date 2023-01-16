@@ -1,0 +1,12 @@
+@mixin fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+@mixin flex-column($column) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $column;
+}

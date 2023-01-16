@@ -1,0 +1,68 @@
+@use '../utilities/mixin' as mixin;
+@use '../utilities/variable' as var;
+
+.navbar {
+    @include mixin.fixed-top;
+    z-index: 1030;
+    width: 100%;
+    background-color: var.$primary-blue;
+    padding: 15px;
+}
+
+.navbar {
+    .logo {
+        h1 {
+            color: var.$white;
+            font-weight: 700;
+        }
+    }
+}
+
+.navbar {
+    .navigation ul li{ 
+        margin: 5px 10px;
+    }
+}
+
+.navbar {
+    .navigation {
+        ul li a {
+            &:not(.login, .dropdown-content ul li a) {
+            &:hover {
+                background-color: var.$white;
+                color: var.$yellow;
+            }
+        }
+        border-radius: 3px;
+        padding: 5px;
+        color: var.$white;
+        font-size: var.$small-font;
+    }
+    
+        
+        .login {
+            background-color: var.$yellow;
+            color: var.$white;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 35px;
+            z-index: 1;
+            width: 12rem;
+            border-radius: 5px;
+            background-color: var.$white;
+            box-shadow: var.$shadow;
+
+            ul {
+                @include mixin.flex-column(column);
+                li a {
+                    color: var.$yellow;
+                    font-size: var.$small-font;
+                }
+            }
+        }
+    }
+}
+

@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 :root {
@@ -82,7 +85,7 @@ a {
 
 .navbar .navigation ul li a {
     border-radius: 3px;
-    padding: 5px 15px;
+    padding: 5px 5px;
     color: var(--white);
     font-size: 12pt;
 }
@@ -97,18 +100,19 @@ a {
 }
 
 .navbar .navigation .dropdown-content {
+    box-shadow: var(--shadow);
     display: none;
     position: absolute;
-    top: 20px;
-    background-color: var(--white);
+    top: 35px;
+    background-color: #ffff;
     z-index: 1;
     width: 12rem;
     border-radius: 5px;
 }
 
-.navbar .navigation .dropdown:hover .dropdown-content {
+/* .navbar .navigation .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
 .navbar .navigation .dropdown-content ul {
     display: flex;
@@ -281,7 +285,7 @@ a {
 }   
 
 .project-wrapper .project-container .card-project .image-card {
-    max-width: 23rem;
+    max-width: 25rem;
 }
 
 .project-wrapper .project-container .card-project .image-card img {
@@ -357,6 +361,7 @@ a {
 
 .dropdown-kelas .container-option .option-dropdown {
     width: 300px;
+    outline: none!important;
     display: inline-block;
     border-radius: 2px;
     box-shadow: 0 0 4px rgb(204, 204, 204);
@@ -404,17 +409,12 @@ a {
     transform: rotate(-90deg);
 }
 
-.dropdown-kelas .container-option .option-dropdown:focus {
-    border: unset;
-}
-
 .dropdown-kelas .container-option .option-dropdown .dropdown-menu {
     position: absolute;
     background-color: #fff;
     width: 100%;
     left: 0;
     margin-top: 1px;
-    /* box-shadow: 0 1px 2px rgb(204, 204, 204); */
     border-radius: 0 1px 2px 2px;
     overflow: hidden;
     display: none;
@@ -439,51 +439,123 @@ a {
 
 .jadwal-wrapper .mapel-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
     gap: 1em;
 }
 
-.jadwal-wrapper .mapel-container .card-wrapper {
+.jadwal-wrapper .mapel-container .card-mapel-item {
     display: flex;
     flex-direction: column;
     color: var(--yellow);
     box-shadow: var(--shadow);
     border-radius: 10px;
-    padding: 1.25em;
+    padding: 1em;
 }
 
-.jadwal-wrapper .mapel-container .card-wrapper .card-mapel {
+.jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body {
     font-weight: 600;
     display: flex;
     flex-direction: column;
 }
 
-.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .sub-heading {
+.jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body .sub-heading {
     text-align: center;
     line-height: 2;
     font-weight: bold;
     font-size: 2em;
 }
 
-.jadwal-wrapper .mapel-container .card-wrapper .card-mapel .mapel-list {
+.jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body .mapel-list {
     display: flex;
     gap: .3em;
     align-items: center;
 }
 
-.mapel-container .card-wrapper .card-mapel .kegiatan {
+.mapel-container .card-mapel-item .card-mapel-body .kegiatan {
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.mapel-container .card-wrapper .card-mapel .mapel-list .mapel {
+.mapel-container .card-mapel-item .card-mapel-body .mapel-list .mapel {
     font-size: 1.2em;
 }
 
-.mapel-container .card-wrapper .card-mapel .mapel-list .guru {
+.mapel-container .card-mapel-item .card-mapel-body .mapel-list .guru {
     margin-top: 2px!important;
     font-size: 1em;
     color: var(--primary-blue);
 }
-
 /* Jadwal-Section */
+
+/* Galery-Section */
+.galery-section {
+    margin: 5em 0;
+}
+
+.galery-wrapper .header-galery {
+    margin-top: 10px;
+}
+
+.galery-wrapper .header-galery .sub-heading {
+    text-align: center;
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.galery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.galery-container .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 22rem;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+}
+
+.galery-container .card-wrapper .card-img {
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    width: 100%;
+}
+
+.galery-container .card-wrapper .card-img img {
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+}
+
+
+.galery-container .card-wrapper .card-body {
+    padding: 1.5em;
+}
+
+
+.galery-container .card-wrapper .card-body .card-description .description {
+    font-weight: 500;
+    line-height: 1.4em;
+}
+
+.galery-container .card-wrapper .card-body .card-action {
+    margin-top: 20px;
+    font-size: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    gap: 1.2em;
+}
+
+.galery-container .card-wrapper .card-body .card-statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+/* Galery-Section */

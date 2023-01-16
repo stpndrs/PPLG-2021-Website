@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+ul, dl, ol {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0 !important;
+}
+
+p {
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--white);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  width: 100%;
+  background-color: #104EA3;
+  padding: 15px;
+}
+
+.navbar .logo h1 {
+  color: #F7F4EA;
+  font-weight: 700;
+}
+
+.navbar .navigation ul li {
+  margin: 5px 10px;
+}
+
+.navbar .navigation ul li a {
+  border-radius: 3px;
+  padding: 5px;
+  color: #F7F4EA;
+  font-size: 12pt;
+}
+.navbar .navigation ul li a:not(.login, .dropdown-content ul li a):hover {
+  background-color: #F7F4EA;
+  color: #F6AB36;
+}
+.navbar .navigation .login {
+  background-color: #F6AB36;
+  color: #F7F4EA;
+}
+.navbar .navigation .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  z-index: 1;
+  width: 12rem;
+  border-radius: 5px;
+  background-color: #F7F4EA;
+  box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.15);
+}
+.navbar .navigation .dropdown-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.navbar .navigation .dropdown-content ul li a {
+  color: #F6AB36;
+  font-size: 12pt;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  background-color: #104EA3;
+}
+header .jumbotron {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+header .jumbotron #coders {
+  width: 95%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+}
+
+footer {
+  background-color: #104EA3;
+  color: #F7F4EA;
+  margin-top: auto;
+  padding: 1.5em;
+}
+footer span {
+  text-decoration: underline;
+  font-weight: 800px;
+}
+
+/*# sourceMappingURL=main.css.map */
