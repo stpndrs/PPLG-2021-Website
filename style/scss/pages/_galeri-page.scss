@@ -1,0 +1,94 @@
+@use '../utilities/mixin' as mixin;
+@use '../utilities/variable' as var;
+
+.galery-section {
+    margin: 5rem 0;
+    .galery-wrapper {
+        .header-galery {
+            margin-top: 10px;
+
+            .sub-heading {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 2em;
+                font-weight: 700;
+                color: var.$primary-blue;
+            }
+        }
+
+        .galery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+
+            .card-wrapper {
+                @include mixin.flex-column(column);
+                max-width: 21rem;
+                border-radius: 5px;
+                box-shadow: var.$shadow;
+
+                .card-img {
+                    @include mixin.object-fit(contain);
+                    aspect-ratio: 16/9;
+
+                    img {
+                        border-radius: 0 0 10px 10px;
+                        width: 100%;
+                    }
+                }
+
+                .card-body {
+                    padding: 1.5em;
+
+                    .card-description {
+
+                        .description {
+                            font-weight: 500;
+                            line-height: 1.4em;
+                        }
+                    }
+
+                    .card-action {
+                        margin-top: 10px;
+                        font-size: 1.2em;
+                        gap: 1.2em;
+                        display: flex;
+                        flex-wrap: wrap;
+                        i {
+                            cursor: pointer;
+                        }
+
+                        
+                        .bi.bi-heart-fill {
+                            color: red;
+                            animation: transform 0.2s linear;
+
+                            @keyframes transform {
+                                10%, 30%, 50% {
+                                    transform: scale(0)
+                                }
+                                60%, 80%, 100% {
+                                    transform: scale(1.2)
+                                }
+                            }
+                        }
+
+                    }
+
+                    .card-statistic {
+                        @include mixin.flex-column(column);
+                        align-items:flex-end;
+                        margin-top: 10px;
+
+                        .show-modal {
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}

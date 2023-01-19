@@ -1,5 +1,5 @@
 @mixin fixed-top {
-    position: fixed;
+    position: fixed!important;
     top: 0;
     left: 0;
     right: 0;
@@ -9,4 +9,34 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: $column;
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin card-title {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+@mixin object-fit($object-fit) {
+    width: 100%;
+    object-fit: $object-fit;
+}
+
+@mixin card-relative($shadow) {
+    box-shadow: $shadow;
+    border-radius: 5px;
+    position: relative;
+}
+
+@mixin card-content($padding) {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    padding: $padding;
 }

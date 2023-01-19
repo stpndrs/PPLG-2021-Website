@@ -183,7 +183,7 @@ a {
 
 .berita-wrapper .berita-container .card-berita .card-image img {
     width: 100%;
-    object-fit: contai;
+    object-fit: contain;
 }
 /* Card Image */
 
@@ -218,6 +218,7 @@ a {
 .galeri-wrapper .galeri-container .card-galeri img {
     padding: 0.5em;
     width: 100%;
+    object-fit: contain;
 }
 /* Galeri-HomePage */
 
@@ -249,7 +250,7 @@ a {
     z-index: 5;
     padding: 0.7em;
     width: 100%;
-    background: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.25);
     box-shadow:  0 .3rem .5rem rgba(0,0,0,.15);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -259,7 +260,6 @@ a {
 
 .project-wrapper .project-container .card-project:hover .card-content {
     transition: height 0.5s ease;
-    border-radius: 0;
     height: 100%;
 }
 /* Card-content */
@@ -394,7 +394,7 @@ a {
     box-shadow: var(--shadow);
 }
 
-.dropdown-kelas .container-option .option-dropdown:active {
+.dropdown-kelas .container-option .option-dropdown:active{
     background-color: #f8f8f8;
 }
 

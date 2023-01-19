@@ -1,0 +1,203 @@
+@use '../utilities/variable' as var;
+@use '../utilities/mixin' as mixin;
+
+header {
+    height: 100%;
+    width: 100%;
+    background-color: var.$primary-blue;
+    .jumbotron {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        #coders {
+            width: 95%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+        }
+    } 
+}
+
+// .family-section-homapage {
+//     .family-wrapper {
+//         .header {
+//             display: flex;
+//             justify-content: space-evenly;
+//             align-items: center;
+//         }
+//     }
+// }
+
+.berita-section-homepage {
+    margin-top: 15px;
+    .berita-wrapper {
+        .berita-container {
+            width: 100%;
+            .owl-carousel {
+                .owl-item {
+                    max-width: 354px;
+                    margin: 20px 0;
+                    margin-left: 10px
+                }
+            }
+            .card-berita {
+                @include mixin.card-relative(var.$shadow);
+                .card-image {
+                        max-width: 23rem;
+                        transition: all 0.5s linear;
+                
+                    img {
+                        @include mixin.object-fit(contain);
+                    }
+                }
+                .card-content {
+                    @include mixin.card-content(0.5em); 
+                    opacity: 0;
+                    transition: all 0.5s ease;
+                    
+                    .title  {
+                        @include mixin.card-title;
+                    }
+                }
+                &:hover {
+                    .card-content {
+                        opacity: 1;
+                        transform: translate(0%, -10%);
+                        transition: all 0.5s ease;
+                    }
+
+                    .card-image {
+                        filter: blur(1.4px);
+                        overflow: hidden;
+                        transition: all 0.5s linear;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.galeri-section-homepage {
+    margin-bottom: 10em;
+    .galeri-wrapper {
+        .galeri-container {
+            @include mixin.flex-center;
+            padding: 1em;
+            gap: 1.2em;
+            .card-galeri {
+                max-width: 21rem;
+                box-shadow: var.$shadow;
+                border-radius: 5px;
+                .title {
+                    @include mixin.card-title;
+                    color: var.$yellow;
+                    padding: 0.5em;
+                }
+                img {
+                    @include mixin.object-fit(contain)
+                }
+            }
+        }
+    }
+}
+
+
+.project-section-homepage {
+    margin: 7em 0;
+    .project-wrapper {
+        .project-container {
+            @include mixin.flex-center;
+            padding: 1em;
+            gap: 1.3em;
+            .card-project {
+                @include mixin.card-relative(var.$shadow);
+                .image-card {
+                    max-width: 25rem;
+                    img {
+                        @include mixin.object-fit(contain)
+                    }
+                }
+                .card-content {
+                    @include mixin.card-content(0.7em);
+                    width: 100%;
+                    overflow: hidden;
+                    background-color: rgba(255, 255, 255, 0.25);
+                    box-shadow: var.$shadow;
+                    backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px);
+                    height: 20%;
+                    transition: all 0.5s ease;
+                    .title {
+                        font-size: 1.2em;
+                        color: var.$yellow;
+                    }
+
+                    .description {
+                        position: absolute;
+                        transform: translate(0%, 10%);
+                        opacity: 1;
+                        transition: all 0.5s ease;
+                        .bahasa-container {
+                            @include mixin.flex-center;
+                            flex-direction: row;
+                            gap: 1em;
+                            margin-top: 1.2em;
+                            img {
+                                object-fit: contain;
+                                aspect-ratio: 1/1;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .card-content {
+                        transition: all 0.5s ease;
+                        height: 100%;
+                    }
+
+                    .description {
+                        opacity: 1;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    margin-bottom: 7em;
+    .massage-container {
+        @include mixin.flex-center;
+        width: 100%;
+        gap: 1.5rem;
+        input, textarea {
+            border-radius: 5px;
+            background-color: var.$primary-blue;
+            border: none;
+            color: var.$gray-blue;
+            padding: 1.5em;
+            width: 350px;
+            text-align: left;
+
+            &:-ms-input-placeholder {
+                color: var.$gray-blue;
+                opacity: 1;
+            }
+        }
+
+        button {
+            border: 1px solid var.$secondary-blue;
+            border-radius: 5px;
+            background-color: var.$gray-blue;
+            padding: 1em;
+            font-weight: 700;
+
+            &:hover {
+                background-color: var.$secondary-blue;
+                color: var.$gray-blue;
+                cursor: pointer;
+            }
+        }
+    }
+}

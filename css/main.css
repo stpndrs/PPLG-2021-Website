@@ -54,16 +54,16 @@ a {
   align-items: center;
   justify-content: center;
 }
-.navbar .navigation ul li {
+.navbar .navigation ul:not(.dropdown-content-navbar ul) li {
   margin: 5px 10px;
 }
-.navbar .navigation ul li a {
+.navbar .navigation ul:not(.dropdown-content-navbar ul) li a {
   border-radius: 3px;
   padding: 5px;
   color: #F7F4EA;
   font-size: 12pt;
 }
-.navbar .navigation ul li a:not(.login, .dropdown-content-navbar ul li a):hover {
+.navbar .navigation ul:not(.dropdown-content-navbar ul) li a:not(.login, .dropdown-content-navbar ul li a):hover {
   background-color: #F7F4EA;
   color: #F6AB36;
 }
@@ -84,7 +84,8 @@ a {
   top: 35px;
   z-index: 1;
   width: 12rem;
-  background-color: white;
+  border-radius: 5px;
+  background-color: #F7F4EA;
   box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.15);
 }
 .navbar .navigation .dropdown-navbar .dropdown-content-navbar ul {
@@ -92,12 +93,17 @@ a {
   flex-wrap: wrap;
   flex-direction: column;
 }
+.navbar .navigation .dropdown-navbar .dropdown-content-navbar ul li:hover {
+  background-color: #F6AB36;
+}
 .navbar .navigation .dropdown-navbar .dropdown-content-navbar ul li::after {
   content: "";
   left: 50%;
   top: 0;
   position: absolute;
-  width: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 3px;
   background-color: #F6AB36;
   transition: width 0.3s ease 0s, left 0.2s ease 0s;
@@ -151,7 +157,8 @@ header .jumbotron #coders {
 }
 .berita-section-homepage .berita-wrapper .berita-container .card-berita .card-image img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .berita-section-homepage .berita-wrapper .berita-container .card-berita .card-content {
   position: absolute;
@@ -200,7 +207,8 @@ header .jumbotron #coders {
 }
 .galeri-section-homepage .galeri-wrapper .galeri-container .card-galeri img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .project-section-homepage {
@@ -224,7 +232,8 @@ header .jumbotron #coders {
 }
 .project-section-homepage .project-wrapper .project-container .card-project .image-card img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .project-section-homepage .project-wrapper .project-container .card-project .card-content {
   position: absolute;
@@ -260,7 +269,8 @@ header .jumbotron #coders {
   margin-top: 1.2em;
 }
 .project-section-homepage .project-wrapper .project-container .card-project .card-content .description .bahasa-container img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   aspect-ratio: 1/1;
 }
 .project-section-homepage .project-wrapper .project-container .card-project:hover .card-content {
@@ -343,17 +353,16 @@ header .jumbotron #coders {
   width: 100%;
 }
 .jadwal-section .jadwal-wrapper .dropdown-kelas .container-option .option-dropdown {
-  border: 1px solid #f8f8f8;
-  text-align: left;
-  font-size: 1.2em;
-  color: #474747;
   width: 300px;
+  outline: none !important;
+  border: 1px solid #f8f8f8;
+  position: relative;
+  font-size: 1.2em;
+  text-align: left;
+  color: #474747;
   height: 100%;
   border-radius: 2px;
-  outline: none !important;
-  position: relative;
   transition: all 0.5s ease;
-  cursor: pointer;
 }
 .jadwal-section .jadwal-wrapper .dropdown-kelas .container-option .option-dropdown .select {
   text-align: center;
@@ -431,7 +440,6 @@ header .jumbotron #coders {
   font-size: 1.2em;
   line-height: 1.5;
   text-align: center;
-  color: #104EA3;
 }
 .jadwal-section .jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body .kegiatan {
   display: flex;
@@ -445,11 +453,11 @@ header .jumbotron #coders {
   gap: 0.3em;
 }
 .jadwal-section .jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body .kegiatan .mapel-list .mapel {
-  font-size: 1.5em;
+  font: 1.2em;
 }
 .jadwal-section .jadwal-wrapper .mapel-container .card-mapel-item .card-mapel-body .kegiatan .mapel-list .guru {
-  color: #474747;
-  font-size: 0.9em;
+  margin-top: 2px;
+  font-size: 1em;
 }
 
 .galery-section {
@@ -480,7 +488,8 @@ header .jumbotron #coders {
 }
 .galery-section .galery-wrapper .galery-container .card-wrapper .card-img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   aspect-ratio: 16/9;
 }
 .galery-section .galery-wrapper .galery-container .card-wrapper .card-img img {
@@ -506,7 +515,16 @@ header .jumbotron #coders {
 }
 .galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-action .bi.bi-heart-fill {
   color: red;
-  animation: transform 0.2s linear;
+  -webkit-animation: transform 0.2s linear;
+          animation: transform 0.2s linear;
+}
+@-webkit-keyframes transform {
+  10%, 30%, 50% {
+    transform: scale(0);
+  }
+  60%, 80%, 100% {
+    transform: scale(1.2);
+  }
 }
 @keyframes transform {
   10%, 30%, 50% {
@@ -523,9 +541,6 @@ header .jumbotron #coders {
   align-items: flex-end;
   margin-top: 10px;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-statistic .show-modal {
-  cursor: pointer;
-}
 
 footer {
   background-color: #104EA3;
@@ -536,6 +551,4 @@ footer {
 footer span {
   text-decoration: underline;
   font-weight: 800px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
