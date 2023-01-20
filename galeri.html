@@ -81,42 +81,105 @@
         </div>
     </nav>
 
-    <div class="container">
-        <section class="galery-section">
-            <div class="galery-wrapper">
-                <div class="header-galery">
-                    <h1 class="sub-heading">Galery</h1>
-                </div>
-                <div class="galery-container mt-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="/img/no-image.png" alt="">
+    <section>
+        <div class="galery-section container mt-4">
+            <div class="galery-header">
+                <h1 class="sub-heading">Galery</h1>
+            </div>
+            <div class="galery-container mt-4">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <img data-image="image" src="/img/no-image.png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-description">
+                            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptatibus asperiores eos unde ullam, culpa neque consequuntur praesentium omnis
+                                repellendus autem, ab iste dolorem labore ad ipsam fuga, at consequatur veniam.</p>
                         </div>
-                        <div class="card-body">
-                            <div class="card-description">
-                                <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                    Voluptatibus asperiores eos unde ullam, culpa neque consequuntur praesentium omnis
-                                    repellendus autem, ab iste dolorem labore ad ipsam fuga, at consequatur veniam.</p>
-                            </div>
-                            <div class="card-action">
-                                <i class="like-icon bi bi-heart"></i>
-                                <i class="bi bi-chat"></i>
-                            </div>
-                            <div class="card-statistic">
-                                <p class="fw-bold">3.700 suka</p>
-                                <p class="show-modal text-muted">Lihat komentar</p>
-                            </div>
+                        <div class="card-action">
+                            <i class="like-icon bi bi-heart"></i>
+                            <i data-bs-toggle="modal" data-bs-target="#openComment" class="bi bi-chat"></i>
+                        </div>
+                        <div class="card-statistic">
+                            <p class="fw-bold">3.700 suka</p>
+                            <p data-bs-toggle="modal" data-bs-target="#openComment" class="text-muted">Lihat komentar</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Modal Show Image -->    
+    <!-- Modal -->
+    <div class="modal-show-image modal fade" id="openComment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-image" class="modal-image">
+                        <img data-image="image" src="/img/no-image.png" alt="">
+                    </div>
+                    <div class="modal-comment-wrapper">
+                        <div class="modal-image-description">
+                            <p class="description">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptatibus asperiores eos unde ullam, culpa neque consequuntur praesentium omnis
+                                repellendus autem, ab iste dolorem labore ad ipsam fuga, at consequatur veniam
+                            </p>
+                            <div class="modal-image-action">
+                                <i class="like-icon bi bi-heart"></i>
+                            </div>
+
+                            <div class="modal-image-statistic">
+                                <p class="fw-bold">3.700 suka</p>
+                            </div>
+
+                            <div class="comment-section">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima obcaecati omnis commodi voluptate veniam eos laboriosam distinctio? Quo perferendis iste eveniet. Quisquam, velit voluptas minima voluptatem quae tempore at culpa.
+                                </p>
+
+                                <br>
+
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima obcaecati omnis commodi voluptate veniam eos laboriosam distinctio? Quo perferendis iste eveniet. Quisquam, velit voluptas minima voluptatem quae tempore at culpa.
+                                </p>
+
+                                <br>
+                                
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima obcaecati omnis commodi voluptate veniam eos laboriosam distinctio? Quo perferendis iste eveniet. Quisquam, velit voluptas minima voluptatem quae tempore at culpa.
+                                </p>
+                            </div>
+                        </div>
+    
+                        <input type="text" class="form-control" placeholder="Berikan Komentar">
+
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <footer>
         Copyright © <span>PPLG_2021</span> | ALL RIGHTS RESERVED
     </footer>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Script -->
+
     <script src="js/index.js"></script>
 </body>
 

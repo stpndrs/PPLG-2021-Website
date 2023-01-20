@@ -455,22 +455,24 @@ header .jumbotron #coders {
 .galery-section {
   margin: 5rem 0;
 }
-.galery-section .galery-wrapper .header-galery {
-  margin-top: 10px;
+.galery-section .galery-header {
+  margin-top: 5rem;
 }
-.galery-section .galery-wrapper .header-galery .sub-heading {
+.galery-section .galery-header .sub-heading {
   text-align: center;
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 700;
   color: #104EA3;
 }
-.galery-section .galery-wrapper .galery-container {
+.galery-section .galery-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper {
+.galery-section .galery-container .card-wrapper {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -478,53 +480,149 @@ header .jumbotron #coders {
   border-radius: 5px;
   box-shadow: 0 0.5rem 0.7rem rgba(0, 0, 0, 0.15);
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-img {
+.galery-section .galery-container .card-wrapper .card-img {
   width: 100%;
   object-fit: contain;
   aspect-ratio: 16/9;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-img img {
+.galery-section .galery-container .card-wrapper .card-img img {
   border-radius: 0 0 10px 10px;
   width: 100%;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body {
+.galery-section .galery-container .card-wrapper .card-body {
   padding: 1.5em;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-description .description {
+.galery-section .galery-container .card-wrapper .card-body .card-description .description {
   font-weight: 500;
   line-height: 1.4em;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-action {
+.galery-section .galery-container .card-wrapper .card-body .card-action {
   margin-top: 10px;
   font-size: 1.2em;
   gap: 1.2em;
   display: flex;
   flex-wrap: wrap;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-action i {
+.galery-section .galery-container .card-wrapper .card-body .card-action i {
   cursor: pointer;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-action .bi.bi-heart-fill {
-  color: red;
-  animation: transform 0.2s linear;
+.galery-section .galery-container .card-wrapper .card-body .card-action i::before {
+  font-weight: bold !important;
 }
-@keyframes transform {
-  10%, 30%, 50% {
-    transform: scale(0);
-  }
+.galery-section .galery-container .card-wrapper .card-body .card-action .bi.bi-heart {
+  color: black;
+  animation: not-like 0.3s linear;
+}
+@keyframes not-like {
   60%, 80%, 100% {
     transform: scale(1.2);
   }
+  10%, 30%, 50% {
+    transform: scale(0);
+  }
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-statistic {
+.galery-section .galery-container .card-wrapper .card-body .card-action .bi.bi-heart-fill {
+  color: red;
+  animation: like 0.3s linear;
+}
+@keyframes like {
+  10%, 30%, 50% {
+    transform: scale(0);
+  }
+  60%, 80%, 90%, 100% {
+    transform: scale(1.2);
+  }
+}
+.galery-section .galery-container .card-wrapper .card-body .card-statistic {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 10px;
 }
-.galery-section .galery-wrapper .galery-container .card-wrapper .card-body .card-statistic .show-modal {
+.galery-section .galery-container .card-wrapper .card-body .card-statistic [data-bs-toggle=modal] {
   cursor: pointer;
+}
+
+.modal-show-image .modal-dialog {
+  max-width: 100%;
+  margin: 20px;
+}
+.modal-show-image .modal-dialog .modal-content {
+  height: 100%;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5em;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-image {
+  max-width: 40rem;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-image img {
+  width: 100%;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description {
+  width: 30rem;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description .modal-image-action {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description .modal-image-action i {
+  cursor: pointer;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description .modal-image-action i::before {
+  font-weight: bold !important;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description .modal-image-action .bi.bi-heart {
+  color: black;
+  animation: not-like 0.3s linear;
+}
+@keyframes not-like {
+  60%, 80%, 100% {
+    transform: scale(1.2);
+  }
+  10%, 30%, 50% {
+    transform: scale(0);
+  }
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .modal-image-description .modal-image-action .bi.bi-heart-fill {
+  color: red;
+  animation: like 0.3s linear;
+}
+@keyframes like {
+  10%, 30%, 50% {
+    transform: scale(0);
+  }
+  60%, 80%, 90%, 100% {
+    transform: scale(1.2);
+  }
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .comment-section {
+  margin: 5px 0;
+  overflow-y: scroll;
+  height: 12rem;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .comment-section::-webkit-scrollbar {
+  width: 5px;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .comment-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .comment-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.modal-show-image .modal-dialog .modal-content .modal-body .modal-comment-wrapper .comment-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 footer {

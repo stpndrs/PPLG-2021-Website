@@ -23,11 +23,26 @@ $(".dropdown-navbar").focusout(function () {
 });
 
 // Card action Galery
-$(".like-icon").click(function () {
+$(".card-body .card-action .like-icon").click(function () {
     $(this).toggleClass("bi-heart")
     $(this).toggleClass("bi-heart-fill")
-    console.log(1);
+    // console.log(1);
 })
+
+$(".modal-body .modal-image-action .like-icon").click(function () {
+    $(this).toggleClass("bi-heart")
+    $(this).toggleClass("bi-heart-fill")
+    // console.log(1);
+})
+
+
+// window.onload = function () {
+//     const image = document.querySelector('[data-image="image"]');
+//     image.a
+//     const modalImage = document.getElementById("modal-image");
+//     modalImage.append(image)
+//     console.log(image);
+// }
 
 // window.onload = function () {
 //     const love = document.querySelector(".bi.bi-heart-fill");
