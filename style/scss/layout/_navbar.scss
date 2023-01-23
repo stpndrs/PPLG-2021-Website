@@ -1,94 +1,89 @@
-@use '../utilities/mixin' as mixin;
-@use '../utilities/variable' as var;
+@use "../utilities/mixin" as mixin;
+@use "../utilities/variable" as var;
 .navbar {
-    @include mixin.fixed-top;
-    z-index: 1030;
-    width: 100%;
-    padding: 15px;
-    background-color: var.$primary-blue;
-    .logo {
-        h1 {
-            color: var.$white;
-            font-weight: 700;
+  @include mixin.fixed-top;
+  z-index: 1030;
+  width: 100%;
+  padding: 15px;
+  background-color: var.$primary-blue;
+  .logo {
+    h1 {
+      color: var.$white;
+      font-weight: 700;
+    }
+  }
+
+  .navigation {
+    ul {
+      &:not(.dropdown-content-navbar ul) {
+        @include mixin.flex-center;
+      }
+      li {
+        margin: 5px 10px;
+        a {
+          &:not(.login, .dropdown-content-navbar ul li a) {
+            &:hover {
+              background-color: var.$white;
+              color: var.$yellow;
+            }
+          }
+          border-radius: 3px;
+          padding: 5px;
+          color: var.$white;
+          font-size: var.$small-font;
         }
+      }
     }
 
-    .navigation {
-        ul { 
-            &:not(.dropdown-content-navbar ul) {
-                @include mixin.flex-center;
-            }
-            li {
-                margin: 5px 10px;
-                a {
-                    &:not(.login, .dropdown-content-navbar ul li a) {
-                    &:hover {
-                        background-color: var.$white;
-                        color: var.$yellow;
-                    }
-
-                }
-                border-radius: 3px;
-                padding: 5px;
-                color: var.$white;
-                font-size: var.$small-font;
-            }
-
-        }
-        
+    .login {
+      background-color: var.$yellow;
+      color: var.$white;
     }
-    
-        
-        .login {
-            background-color: var.$yellow;
-            color: var.$white;
-        }
 
+    .dropdown-navbar {
+      outline: none !important;
+      position: relative;
+      color: var.$white;
+      cursor: pointer;
+      .dropdown-content-navbar {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        top: 45px;
+        z-index: 1;
+        width: 12rem;
+        background-color: #ffff;
+        box-shadow: var.$shadow;
 
-        .dropdown-navbar {
-            outline: none!important;
+        ul {
+          @include mixin.flex-column(column);
+          gap: 5px;
+          li {
             position: relative;
-            color: var.$white;
-            cursor: pointer;
-            .dropdown-content-navbar {
-                display: none;
-                position: absolute;
-                overflow: hidden;
-                top: 35px;
-                z-index: 1;
-                width: 12rem;
-                background-color: #ffff;
-                box-shadow: var.$shadow;
-    
-                ul {
-                    @include mixin.flex-column(column);
-                    li {
-                        &::after {
-                            content: '';
-                            left: 50%;
-                            top: 0;
-                            position: absolute;
-                            width: 0;
-                            height: 3px;
-                            background-color: var.$yellow;
-                            transition: width .3s ease 0s, left 0.2s ease 0s;
-                        }
-                        
-                        &:hover::after {
-                            width: 100%;
-                            left: 0;
-                            transition: width .3s ease 0s, left 0.2s ease 0s;
-                        }
-
-                        a {
-                            color: var.$yellow;
-                            font-size: var.$small-font;
-                        }
-
-                    }
-                }
+            &::after {
+              position: absolute;
+              content: "";
+              left: 0;
+              height: 2px;
+              bottom: 0;
+              width: 0;
+              background-color: var.$yellow;
+              transition: width 0.3s ease 0s, left 0.2s ease 0s;
             }
-        }
-    }
-}
 
+            &:hover::after {
+              width: 100%;
+              left: 0;
+              transition: width 0.3s ease 0s, left 0.2s ease 0s;
+            }
+
+            a {
+              color: var.$yellow;
+              font-size: var.$small-font;
+            }
+          }
+        }
+      }
+    }
+  }
+}

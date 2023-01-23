@@ -1,172 +1,162 @@
-@use '../utilities/mixin' as mixin;
-@use '../utilities/variable' as var;
+@use "../utilities/mixin" as mixin;
+@use "../utilities/variable" as var;
 
 .jadwal-section {
-    margin: 5em 0;
-    .jadwal-wrapper {
-        @include mixin.flex-column(column);
-        justify-content: center;
-        gap: 3em;
+  margin: 5em 0;
+  .jadwal-wrapper {
+    @include mixin.flex-column(column);
+    justify-content: center;
+    gap: 3em;
 
-        .header-jadwal {
-            margin-top: 10px;
+    .header-jadwal {
+      margin-top: 10px;
 
-            .sub-heading {
-                text-align: center;
-                color: var.$primary-blue;
-                text-transform: uppercase;
-                font-size: 2em;
-                font-weight: 700;
-            }
-
-        }
-
-        .dropdown-kelas {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 100%;
-            
-            .container-option {
-                @include mixin.flex-center;
-                width: 100%;
-                
-                .option-dropdown {
-                    border: 1px solid #f8f8f8;
-                    text-align: left;
-                    font-size: 1.2em;
-                    color: #474747;
-                    width: 300px;
-                    height: 100%;
-                    border-radius: 2px;
-                    outline: none!important;
-                    position: relative;
-                    transition: all 0.5s ease;
-                    cursor: pointer;
-                    
-                    
-                    .select {
-                        text-align: center;
-                        display: block;
-                        padding: 10px;
-
-                        span {
-                            font-size: 13pt;
-                            padding: 5px;
-                        }
-
-                        i {
-                            font-size: 10pt;
-                            color: var.$yellow;
-                            
-                            &::before {
-                                transition: all 0.3s ease-in-out;
-                                transform: rotate(0deg);
-                            }
-                        }
-                    }
-                    
-                    &.active {
-                        .select {
-                            i::before {
-                                transition: all 0.3s ease-in-out;
-                                transform: rotate(-180deg);
-                            }
-                        }
-                    }
-
-                    &:hover, &.active {
-                        // border-radius: 1px solid #f8f8f8;
-                        // box-shadow: var.$shadow;
-                        border: 2px 2px 0 0;
-                        // background-color: #f8f8f8;
-                    }
-
-                    &:active {
-                        background-color: #f8f8f8;
-                    }
-
-                    .dropdown-menu {
-                        display: none;
-                        position: absolute;
-                        overflow: hidden;
-                        overflow-y: auto;
-                        z-index: 9;
-                        left: 0;
-                        width: 100%;
-                        background-color: #fff;
-                        margin-top: 5px;
-                        border-radius: 0 0 2px 2px;
-
-                        li {
-                            padding: 10px;
-                            transition: all 0.2s ease-in-out;
-                            cursor: pointer;
-
-                            &:hover {
-                                background-color: #f2f2f2;
-                            }
-
-                            &:active {
-                                background-color: #e2e2e2;
-                            }
-
-                        }
-                    }
-
-                }
-
-            }
-
-        }
-
-        .mapel-container {
-            @include mixin.flex-center;
-            gap: 1em;
-
-            .card-mapel-item {
-                @include mixin.flex-column(column);
-                color: var.$yellow;
-                box-shadow: var.$shadow;
-                border-radius: 10px;
-                padding: 1em;
-
-                .card-mapel-body {
-                    @include mixin.flex-column(column);
-                    font-weight: 600;
-                    
-                    .sub-heading {
-                        @include mixin.card-title;
-                        text-align: center;
-                        color: var.$primary-blue;
-                    }
-                    
-                    .kegiatan {
-                        @include mixin.flex-column(column);
-                        padding: 10px;
-
-                        .mapel-list {
-                            display: flex;
-                            align-items: center;
-                            gap: .3em;
-
-                            .mapel {
-                                font-size: 1.5em;
-                            }
-
-                            .guru {
-                                color: #474747;
-                                font-size: 0.9em;
-                            }
-
-                        }
-                    }
-
-                }
-                
-            }
-
-        }
-
+      .sub-heading {
+        text-align: center;
+        color: var.$primary-blue;
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: 700;
+      }
     }
+
+    .dropdown-kelas {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      .container-option {
+        @include mixin.flex-center;
+        width: 100%;
+
+        .option-dropdown {
+          border: 1px solid #f8f8f8;
+          text-align: left;
+          font-size: 1.2em;
+          color: #474747;
+          width: 300px;
+          height: 100%;
+          border-radius: 2px;
+          outline: none !important;
+          position: relative;
+          transition: all 0.5s ease;
+          cursor: pointer;
+
+          .select {
+            text-align: center;
+            display: block;
+            padding: 10px;
+
+            span {
+              font-size: 13pt;
+              padding: 5px;
+            }
+
+            i {
+              font-size: 10pt;
+              color: var.$yellow;
+
+              &::before {
+                transition: all 0.3s ease-in-out;
+                transform: rotate(0deg);
+              }
+            }
+          }
+
+          &.active {
+            .select {
+              i::before {
+                transition: all 0.3s ease-in-out;
+                transform: rotate(-180deg);
+              }
+            }
+          }
+
+          &:hover,
+          &.active {
+            // border-radius: 1px solid #f8f8f8;
+            // box-shadow: var.$shadow;
+            border: 2px 2px 0 0;
+            // background-color: #f8f8f8;
+          }
+
+          &:active {
+            background-color: #f8f8f8;
+          }
+
+          .dropdown-menu {
+            display: none;
+            position: absolute;
+            overflow: hidden;
+            overflow-y: auto;
+            z-index: 9;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            margin-top: 5px;
+            border-radius: 0 0 2px 2px;
+
+            li {
+              padding: 10px;
+              transition: all 0.2s ease-in-out;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #f2f2f2;
+              }
+
+              &:active {
+                background-color: #e2e2e2;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mapel-container {
+      @include mixin.flex-center;
+      gap: 1em;
+
+      .card-mapel-item {
+        @include mixin.flex-column(column);
+        color: var.$yellow;
+        box-shadow: var.$shadow;
+        border-radius: 10px;
+        padding: 1em;
+
+        .card-mapel-body {
+          @include mixin.flex-column(column);
+          font-weight: 600;
+
+          .sub-heading {
+            @include mixin.card-title;
+            text-align: center;
+            color: var.$primary-blue;
+          }
+
+          .kegiatan {
+            @include mixin.flex-column(column);
+            padding: 10px;
+
+            .mapel-list {
+              display: flex;
+              align-items: center;
+              gap: 0.3em;
+
+              .mapel {
+                font-size: 1.5em;
+              }
+
+              .guru {
+                color: #474747;
+                font-size: 0.9em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

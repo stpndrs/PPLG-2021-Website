@@ -34,21 +34,3 @@ $(".modal-body .modal-image-action .like-icon").click(function () {
     $(this).toggleClass("bi-heart-fill")
     // console.log(1);
 })
-
-
-// window.onload = function () {
-//     const image = document.querySelector('[data-image="image"]');
-//     image.a
-//     const modalImage = document.getElementById("modal-image");
-//     modalImage.append(image)
-//     console.log(image);
-// }
-
-// window.onload = function () {
-//     const love = document.querySelector(".bi.bi-heart-fill");
-//     console.log(love);
-//     love.addEventListener("click", function (e) {
-//         love.style.color = 'red'
-//         console.log(1);
-//     });
-// }

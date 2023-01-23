@@ -60,3 +60,35 @@ beritaSlider.on("mousewheel", ".owl-stage", function (e) {
   }
   e.preventDefault();
 });
+
+
+const modalSlider = $(".modal-image").owlCarousel({
+  loop: false,
+  margin: 10,
+  nav: true,
+  lazyload: true,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+      nav: true,
+    },
+    600: {
+      items: 1,
+      nav: false,
+    },
+    1000: {
+      items: 1,
+      nav: true,
+      loop: true,
+    },
+  },
+});
+modalSlider.on("mousewheel", ".owl-stage", function (e) {
+  if (e.deltaY > 0) {
+    modalSlider.trigger("next.owl");
+  } else {
+    modalSlider.trigger("prev.owl");
+  }
+  e.preventDefault();
+});

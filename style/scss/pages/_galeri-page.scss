@@ -36,7 +36,7 @@
       }
 
       .card-body {
-        padding: 1.5em;
+        padding: 1.2em;
 
         .card-description {
           .description {
@@ -124,29 +124,62 @@
         @include mixin.flex-column(row);
         justify-content: center;
         gap: 1.5em;
-
+        height: 35rem;
+        
         .modal-image {
+          @include mixin.flex-center;
           max-width: 40rem;
+
+          .owl-nav {
+            display: none;
+          }
 
           img {
             width: 100%;
           }
+
         }
 
         .modal-comment-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
 
-            .modal-image-description {
-              width: 30rem;
+          .modal-comment-content {
+            max-width: 30rem;
+            height: 80%;
+            overflow-y: scroll;
+
+              &::-webkit-scrollbar {
+                width: 5px;
+              }
     
+              &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+              }
+    
+              &::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 10px;
+              }
+    
+              &::-webkit-scrollbar-thumb:hover {
+                background: #555;
+              }
+
+            .description {
+              border-bottom: 1px solid #dee2e6;
+              padding-bottom: 1em;
+              
               .modal-image-action {
                 margin-top: 10px;
-                font-size: 1.2em;
+                font-size: 1em;
+                margin-left: 5px;
+                gap: 1em;
+                display: flex;
                 i {
                   cursor: pointer;
-    
+  
                   &::before {
                     font-weight: bold !important;
                   }
@@ -154,14 +187,14 @@
                 .bi.bi-heart {
                   color: black;
                   animation: not-like 0.3s linear;
-    
+  
                   @keyframes not-like {
                     60%,
                     80%,
                     100% {
                       transform: scale(1.2);
                     }
-    
+  
                     10%,
                     30%,
                     50% {
@@ -169,18 +202,18 @@
                     }
                   }
                 }
-    
+  
                 .bi.bi-heart-fill {
                   color: red;
                   animation: like 0.3s linear;
-    
+  
                   @keyframes like {
                     10%,
                     30%,
                     50% {
                       transform: scale(0);
                     }
-    
+  
                     60%,
                     80%,
                     90%,
@@ -193,28 +226,14 @@
             }
 
             .comment-section {
-                margin: 5px 0;
-                overflow-y: scroll;
-                height: 12rem;
-
-                &::-webkit-scrollbar {
-                    width: 5px;
-                }
-
-                &::-webkit-scrollbar-track {
-                    background: #f1f1f1;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background: #888;
-                    border-radius: 10px;
-                }
-
-                &::-webkit-scrollbar-thumb:hover {
-                    background: #555;
-                }
-
+              margin-top: 2em;
             }
+
+          }
+          .input-wrapper {
+            top: 5%;
+          }
+
         }
       }
     }
