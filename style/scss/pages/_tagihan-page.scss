@@ -1,3 +1,42 @@
+@use '../utilities/mixin' as mixin;
+@use '../utilities/variable' as var;
+
+
 .tagihan-section {
-    margin: 5em 0;
+    @include mixin.flex-center;
+    height: 100vh;
+
+    .tagihan-table-container {
+
+        .tagihan-card {
+            gap: 10px;
+
+            .detail-card, .history-card {
+                background-color: white;
+                border-radius: 10px;
+                padding: 2em;
+                box-shadow: var.$shadow;
+            }
+
+            .detail-card {
+                table {
+                    tbody {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        tr {
+                            width: 20em;
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .history-card {
+                flex-basis: 35%;
+            }
+        }
+    }
+
 }

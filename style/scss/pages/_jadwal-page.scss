@@ -131,7 +131,6 @@
           font-weight: 600;
 
           .sub-heading {
-            @include mixin.card-title;
             text-align: center;
             color: var.$primary-blue;
           }
@@ -139,6 +138,10 @@
           .kegiatan {
             @include mixin.flex-column(column);
             padding: 10px;
+
+            .waktu {
+              color: #000;
+            }
 
             .mapel-list {
               display: flex;
@@ -150,7 +153,7 @@
               }
 
               .guru {
-                color: #474747;
+                color: var.$primary-blue;
                 font-size: 0.9em;
               }
             }
